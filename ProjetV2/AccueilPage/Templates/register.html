@@ -1,0 +1,80 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CréationCompte</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+
+</head>
+<body>
+  <h2>Créeons un compte pour votre famille!</h2>
+  <div class="container">
+    <div class="row" >
+      <div class="col align-self-center">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            Etape 1 : Entrez les informations relatif au foyer
+          </div>
+          <div class="card-body">
+            {% if boutonValidationPersonne %}
+            <div class="alert alert-success" role="alert">
+              Foyer créer avec succès.
+            </div>
+            {% endif %}
+            {% if boutonValidationFoyer %}
+            <form name="r" method="POST" action="/register/" autocomplete="off">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <br>
+            <button type="submit" name="ValidezFoyer" class="btn btn-success">Validez</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col align-self-center">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            Etape 2 : Entrez les informations relatif aux membres de la famile
+          </div>
+          <div class="card-body">
+            {% if boutonValidationPersonne %}
+            <div class="alert alert-success" role="alert">
+            {{message}}
+            </div>
+            {% endif %}
+            <form method="POST" action="/register/" autocomplete="off">
+            {% csrf_token %}
+            {{ formPersonne | crispy}}
+            {% if boutonValidationPersonne %}
+            <button type="submit" name="ValidezPersonne" class="btn btn-success">Validez</button>
+            {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <a target="_blank" href="https://www.vexels.com/vectors/preview/187857/people-with-medical-masks-pattern-design"> People with medical masks pattern design </a> <a>| Free vector by</a> <a target="_blank" href="https://www.vexels.com/">Vexels</a>
+</body>
+
+</html>

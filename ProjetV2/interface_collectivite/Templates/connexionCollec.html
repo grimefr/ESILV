@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'connexion.css' %}">
+
+    <title>Connexion</title>
+
+  </head>
+
+<body>
+  <div class="main">
+          <div class="left">
+            <div class="card text-center" style="width: 350px;">
+              <div class="card-header">
+                <h1>Connexion</h1>
+              </div>
+              <br>
+              <br>
+              <div class="card-body">
+                <form method="POST" action="/" autocomplete="off">
+                {% csrf_token %}
+                {{ form | crispy}}
+                <br>
+                <br>
+                <button type="submit" class="btn btn-success">Validez</button>
+                </form>
+              <br>
+              <p>{{p_error}}</p>
+              <br>
+              
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <img class="fit-picture" src="static/illustration3.png">
+            <a class="lien" target="_blank" href="https://www.vexels.com/vectors/preview/193270/covid-19-symptom-character-headache"> Covid 19 symptom character headache</a> <a class=lien>| Designed by Vexels.com</a>
+          </div>
+  </div>
+</body>
+
+</html>
