@@ -1,0 +1,66 @@
+﻿<Window x:Class="Projet_BDI.Gestionnaire"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDI"
+        mc:Ignorable="d"
+        Title="Gestionnaire" Height="681.4" Width="1064">
+    <Grid Margin="0,0,0,1">
+        <TextBlock Name="CDRsemaine" HorizontalAlignment="Left" Margin="39,371,0,0" TextWrapping="Wrap" Text="CDR de la semaine : " VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock Name="CDRor" HorizontalAlignment="Left" Margin="39,411,0,0" TextWrapping="Wrap" Text="CDR d'or :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="153,160,0,0" TextWrapping="Wrap" Text="Top 5 Des recettes de la semaine :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="14"/>
+        <TextBox Name="ClientSuppr" HorizontalAlignment="Left" Height="19" Margin="673,433,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108"/>
+        <TextBox Name="RecetteSuppr" HorizontalAlignment="Left" Height="19" Margin="673,475,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108"/>
+        <Button Name="SupprimerClient" Click="SupprimerClient_Click" Content="Supprimer client" HorizontalAlignment="Left" Margin="534,434,0,0" VerticalAlignment="Top" Width="116" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Name="SupprimerRecette"  Click="SupprimerRecette_Click" Content="Supprimer Recette" HorizontalAlignment="Left" Margin="534,475,0,0" VerticalAlignment="Top" Width="116" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock Name="ListePlatCDRor" HorizontalAlignment="Left" Margin="39,445,0,0" TextWrapping="Wrap" Text="Liste de ses 5 plats les plus commandés : " VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Name="Retour" Click="Retour_Click" Content="Retour menu" HorizontalAlignment="Left" Margin="475,548,0,0" VerticalAlignment="Top" Width="175" Height="69" FontFamily="Rockwell Nova Cond Light"/>
+        <ListView Margin="33,183,549.6,310" Name="recette_list" ItemsSource="{Binding Plat, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="Liste_aliment_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomR, Mode=TwoWay}" />
+                    <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type , Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="50" DisplayMemberBinding="{Binding Prix , Mode=TwoWay}" />
+                    <GridViewColumn Header="Renommé" Width="70" DisplayMemberBinding="{Binding Renomme , Mode=TwoWay}" />
+                    <GridViewColumn Header="Descriptif" Width="150" DisplayMemberBinding="{Binding Descriptif , Mode=TwoWay}" />
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Image HorizontalAlignment="Left" Height="100" Margin="707,32,0,0" VerticalAlignment="Top" Width="107" Source="logo.jpg"/>
+        <TextBlock HorizontalAlignment="Left" Margin="253,64,0,0" TextWrapping="Wrap" Text="Bienvenue dans l'onglet Gestionnaire" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="24"/>
+        <Button Name="OuvriFichier" Click="OuvrirFichier_Click" Content="Ouvrir le fichier" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="806,452,0,0" FontFamily="Rockwell Nova Cond Light" RenderTransformOrigin="0.54,-1.72"/>
+        <TextBlock HorizontalAlignment="Left" Margin="808,146,0,0" TextWrapping="Wrap" Text="Liste des commandes de la semaine :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="14"/>
+        <ListView x:Name="ListeProduitRapro" ItemsSource="{Binding Produit, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="193" Margin="529,183,0,0" VerticalAlignment="Top" Width="252" SelectionChanged="ListeProduitRapro_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="IDproduit" Width="100" DisplayMemberBinding="{Binding IDproduit, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stock" Width="60" DisplayMemberBinding="{Binding Stock, Mode=TwoWay}" />
+                    <GridViewColumn Header="Stockmini" Width="85" DisplayMemberBinding="{Binding Stockmini, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="529,160,0,0" TextWrapping="Wrap" Text="Liste des produit à réaprovisionner : " VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="14"/>
+        <Button x:Name="Reapprovisionnement" Click="Reapprovisionnement_Click" Content="Réapprovisioner" HorizontalAlignment="Left" Margin="534,393,0,0" VerticalAlignment="Top" Width="116" FontFamily="Rockwell Nova Cond Light"/>
+        <ListView x:Name="ListeCommande" ItemsSource="{Binding RecapCommande, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="264" Margin="806,183,0,0" VerticalAlignment="Top" Width="191" SelectionChanged="ListeCommande_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="180" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="MiseAjourStock" Click="MiseAjourStock_Click" Content="Mise à jour stock" HorizontalAlignment="Left" Margin="673,393,0,0" VerticalAlignment="Top" Width="108" FontFamily="Rockwell Nova Cond Light"/>
+        <ListView x:Name="ListRecetteCDROr" ItemsSource="{Binding Plat, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="144" Margin="39,473,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="ListRecetteSemaine_Copy_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="150" DisplayMemberBinding="{Binding NomR, Mode=TwoWay}" />
+                    <GridViewColumn Header="Commandées" Width="100" DisplayMemberBinding="{Binding Renomme, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

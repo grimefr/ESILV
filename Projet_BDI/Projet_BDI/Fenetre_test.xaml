@@ -1,0 +1,17 @@
+﻿<Window x:Class="Projet_BDI.Fenetre_test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDI"
+        mc:Ignorable="d"
+        Title="Fenêtre de tests" Height="450" Width="800">
+    <Grid>
+        <TextBox Name="entre" HorizontalAlignment="Left" Height="23" Margin="502,331,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184"/>
+        <TextBlock Name ="preuve" HorizontalAlignment="Left" Margin="10,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="262" Width="774" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="502,294,0,0" TextWrapping="Wrap" Text="Quelle est l'aliment que vous voulez tester ?" VerticalAlignment="Top" Width="184" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock Name="EntreTexte" HorizontalAlignment="Left" Margin="10,291,0,0" TextWrapping="Wrap" Text="En attante de la saisie de l'aliment." VerticalAlignment="Top" Height="100" Width="487" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="Valider le produit" HorizontalAlignment="Left" Margin="502,360,0,0" VerticalAlignment="Top" Width="184" Click="Valider" FontFamily="Rockwell Nova Cond Light"/>
+
+    </Grid>
+</Window>

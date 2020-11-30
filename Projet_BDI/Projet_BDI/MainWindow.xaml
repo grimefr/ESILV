@@ -1,0 +1,25 @@
+﻿<Window x:Class="Projet_BDI.Page_Accueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDI"
+        mc:Ignorable="d"
+        Title="Ma petite cuisine by Cooking" Height="361.6" Width="577.6">
+    <Grid Margin="0,0,30,9">
+        <Image HorizontalAlignment="Left" Height="235" Margin="324,39,0,0" VerticalAlignment="Top" Width="220" Source="logo.jpg"/>
+        <TextBox Name = "identifiant" HorizontalAlignment="Left" Height="23" Margin="150,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Connexion" HorizontalAlignment="Left" Height="92" Margin="42,39,0,0" VerticalAlignment="Top" Width="297" RenderTransformOrigin="0.044,1.589" FontSize="48" FontFamily="Rockwell Nova Cond Light"/>
+
+        <Button Content="Continuer sans s'enregistrer" HorizontalAlignment="Left" Margin="42,283,0,0" VerticalAlignment="Top" Width="229" Click="ModeEssaie" Height="30" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="S'inscrire" HorizontalAlignment="Left" Margin="42,245,0,0" VerticalAlignment="Top" Width="90" Click="S_inscrire" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="Se connecter" HorizontalAlignment="Left" Margin="42,221,0,0" VerticalAlignment="Top" Width="90" Click="Se_Connecter" FontFamily="Rockwell Nova Cond Light"/>
+        <PasswordBox Name="motdepasse" HorizontalAlignment="Left" Height="23" Margin="151,175,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Mode test" HorizontalAlignment="Left" Margin="437,283,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="TestMode" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click="Gestionnaire_Click" Name ="Gestionnaire" Content="Gestionnaire" HorizontalAlignment="Left" Margin="324,283,0,0" VerticalAlignment="Top" Width="108" Height="30" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,149,0,0" TextWrapping="Wrap" Text="Identifiant" VerticalAlignment="Top" Width="72" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,175,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" Width="87"/>
+
+    </Grid>
+</Window>

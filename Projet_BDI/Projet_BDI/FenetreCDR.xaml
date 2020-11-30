@@ -1,0 +1,55 @@
+﻿<Window x:Class="Projet_BDI.FenetreCDR"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDI"
+        mc:Ignorable="d"
+        Title="FenetreCDR" Height="659.6" Width="1022.8">
+    <Grid Margin="0,0,3.6,-1.2">
+        <ListView Margin="56,183,811.4,203.8" Name="liste_aliment" ItemsSource="{Binding aliment, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="Liste_aliment_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="IDproduit" Width="150" DisplayMemberBinding="{Binding IDproduit, Mode=TwoWay}" />
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="64,57,0,0" TextWrapping="Wrap" Text="Suivez les différentes étapes pour créer votre recette, vous allez voir c'est facile !" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="24" Width="648"/>
+        <Image HorizontalAlignment="Left" Height="122" Margin="796,10,0,0" VerticalAlignment="Top" Width="140" Source="logo.jpg"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,158,0,0" TextWrapping="Wrap" Text="1 - Ajoutez les aliments !" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click ="AjouterRecette" Content="Ajouter " HorizontalAlignment="Left" Margin="92,442,0,0" VerticalAlignment="Top" Width="75" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Name="SupprimerRecette" Content="Supprimer" HorizontalAlignment="Left" Margin="707,442,0,0" VerticalAlignment="Top" Width="94" Click="SupprimerRecette_Click" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBox Name="NomRecette" HorizontalAlignment="Left" Height="23" Margin="274,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90"/>
+        <TextBox Name ="DescriptionProduit" HorizontalAlignment="Left" Height="56" Margin="237,303,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313"/>
+        <Button Click="CreerRecette" Content="Créer la recette" HorizontalAlignment="Left" Margin="529,384,0,0" VerticalAlignment="Top" Width="115" Height="43" FontFamily="Rockwell Nova Cond Light"/>
+        <ListView Margin="707,183,65.4,203.8" x:Name="liste_aliment_recette" ItemsSource="{Binding alimentrecette, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="Liste_aliment_SelectionChanged" FontFamily="Rockwell Nova Cond Light">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="130" DisplayMemberBinding="{Binding IDproduit, Mode=TwoWay}" />
+                    <GridViewColumn Header="Quantité" Width="60" DisplayMemberBinding="{Binding Quantite, Mode=TwoWay}" />
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="305,158,0,0" TextWrapping="Wrap" Text="2 - Complétez les informations lié à ta rectte !" VerticalAlignment="Top" RenderTransformOrigin="1.203,1.975" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="707,158,0,0" TextWrapping="Wrap" Text="3 - Ajustez les ingrédient si besoin !" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click="AjouterRecetteFinal_Click" Name ="AjouterRecetteFinal" Content="Ajouter " HorizontalAlignment="Left" Margin="853,451,0,0" VerticalAlignment="Top" Width="94" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="4 - Valide ta rectte ! et c'est finit !" VerticalAlignment="Top" Margin="237,398,0,0" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,210,0,0" TextWrapping="Wrap" Text="Nom :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,282,0,0" TextWrapping="Wrap" Text="Description en 256 caractères max :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,250,0,0" TextWrapping="Wrap" Text="Prix de vente au client : (entre 10 et 40 cook)" VerticalAlignment="Top" Width="282" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBox Name = "PrixVente" HorizontalAlignment="Left" Height="23" Margin="564,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.34,0.643"/>
+        <TextBlock Name = "Information_client" HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" Text="Information utilisateur, dont solde cook" VerticalAlignment="Top" Width="353" FontSize="14" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Name="RetourMenu" Content="Retour Menu principal" HorizontalAlignment="Left" Margin="695,531,0,0" VerticalAlignment="Top" Width="240" Height="64" Click="RetourMenu_Click" FontFamily="Rockwell Nova Cond Light" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,521,0,0" TextWrapping="Wrap" Text="Une fois votre recette crée, vous pouvez également retourner au menu principale en cliquant sur  :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" FontSize="24" Width="651" Height="74"/>
+        <TextBox Name="typedeplat" HorizontalAlignment="Left" Height="23" Margin="564,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80"/>
+        <TextBlock HorizontalAlignment="Left" Margin="476,214,0,0" TextWrapping="Wrap" Text="Type de plat :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click="ViderRecette" Content="Vider recette" HorizontalAlignment="Left" Margin="707,466,0,0" VerticalAlignment="Top" Width="94" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click="RecetteCrees" Content="Recette crées" HorizontalAlignment="Left" Margin="529,432,0,0" VerticalAlignment="Top" Width="115" Height="38" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="237,444,0,0" TextWrapping="Wrap" Text="5 - Visualisez toutes vos recettes créees!" VerticalAlignment="Top" Width="248" FontFamily="Rockwell Nova Cond Light"/>
+
+    </Grid>
+</Window>

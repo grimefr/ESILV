@@ -1,0 +1,59 @@
+﻿<Window x:Class="Projet_BDI.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BDI"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="628.12" Width="940.792">
+    <Grid Margin="0,0,2.4,1.8" RenderTransformOrigin="0.497,0.532">
+        <Image x:Name="Cooking_logo" HorizontalAlignment="Left" Height="120" Margin="794,10,-30,0" VerticalAlignment="Top" Width="168" Source="logo.jpg"/>
+
+        <ListView Margin="611,219,52,213.6" FontFamily="Rockwell Nova Cond Light" Name="liste_panier" ItemsSource="{Binding panier, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="liste_panier_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="180" DisplayMemberBinding="{Binding NomR, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="50" DisplayMemberBinding="{Binding Prix , Mode=TwoWay}" />
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="611,198,0,0" TextWrapping="Wrap" Text="Votre pannier :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light" />
+        <Button Name="commander" Click="Commander" Content="Commander" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="611,397,0,0" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="725,395,0,0" TextWrapping="Wrap" Text="Prix total :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+
+        <ListView Margin="35,219,335,213.6" FontFamily="Rockwell Nova Cond Light" Name="plats_list" ItemsSource="{Binding plats, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="plats_list_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding NomR, Mode=TwoWay}" />
+                    <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Type , Mode=TwoWay}" />
+                    <GridViewColumn Header="Prix" Width="50" DisplayMemberBinding="{Binding Prix , Mode=TwoWay}" />
+                    <GridViewColumn Header="Renommé" Width="100" DisplayMemberBinding="{Binding Renomme , Mode=TwoWay}" />
+                    <GridViewColumn Header="Descriptif" Width="230" DisplayMemberBinding="{Binding Descriptif , Mode=TwoWay}" />
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="35,198,0,0" TextWrapping="Wrap" Text="Plats disponibles :" VerticalAlignment="Top" Width="126" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Name="Ajouter_panier" Click="ajouter_panier" Content="Ajouter au panier" HorizontalAlignment="Left" Margin="35,393,0,0" VerticalAlignment="Top" Width="126" Height="43" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="Supprimer du panier" HorizontalAlignment="Left" Margin="449,393,0,0" VerticalAlignment="Top" Width="148" Click="Supprimer_item_panier" Height="43" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock Name ="prixdupanier" HorizontalAlignment="Left" Margin="810,395,0,0" TextWrapping="Wrap" Text="prix" VerticalAlignment="Top" Width="40" FontFamily="Rockwell Nova Cond Light"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="35,60,0,0" TextWrapping="Wrap" Text="Comment commander un de nos plats ? Rien de plus simple, suivez ces 3 étapes. " VerticalAlignment="Top" FontSize="24" Width="732" FontFamily="Rockwell Nova Cond Light" Height="70"/>
+        <TextBlock HorizontalAlignment="Left" Margin="78,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"><Run Text="1 - Selectionner "/><Run Text="le "/><Run Text="plat "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="339,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"><Run Text="2 "/><Run Text="- A"/><Run Text="jouter"/><Run Text=" le"/><Run Text=" au panier"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="611,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Rockwell Nova Cond Light"><Run Text="3 - Commander"/><Run Text=" "/><Run Text="tout ce que vous voulez !"/></TextBlock>
+        <TextBlock Name ="Idconnecte" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="id :" VerticalAlignment="Top" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock Name ="solde_cook" HorizontalAlignment="Left" Margin="720,423,0,0" TextWrapping="Wrap" Text="pointcook" VerticalAlignment="Top" Width="160" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="Rechargement en cook" HorizontalAlignment="Left" Margin="611,456,0,0" VerticalAlignment="Top" Width="156" Click="RechargerSolde" Height="23" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Content="Vider le panier" HorizontalAlignment="Left" Margin="799,460,0,0" VerticalAlignment="Top" Width="97" Click="ViderPanier" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="611,423,0,0" TextWrapping="Wrap" Text="Solde cook :" VerticalAlignment="Top" Width="109" FontFamily="Rockwell Nova Cond Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="49,526,0,0" TextWrapping="Wrap" Text="Vous pouvez également créer des recettes et être rémunéré pour ça !" VerticalAlignment="Top" FontSize="18" FontFamily="Rockwell Nova Cond Light" Width="781"/>
+        <Button Click ="CreerRecette" Content="Créateur de recette" HorizontalAlignment="Left" Margin="704,519,0,0" VerticalAlignment="Top" Width="157" Height="42" FontSize="14" FontFamily="Rockwell Nova Cond Light"/>
+        <Button Click="Retour_Click" Content="Retour accueil" HorizontalAlignment="Left" Margin="35,441,0,0" VerticalAlignment="Top" Width="126" FontFamily="Rockwell Nova Cond Light" Height="38"/>
+
+
+    </Grid>
+</Window>
