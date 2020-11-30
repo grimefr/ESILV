@@ -1,0 +1,7 @@
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\bin\Debug\Projet_TraitementImage.exe.config
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\bin\Debug\Projet_TraitementImage.exe
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\bin\Debug\Projet_TraitementImage.pdb
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\obj\Debug\Projet_TraitementImage.csproj.CoreCompileInputs.cache
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\obj\Debug\Projet_TraitementImage.exe
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\obj\Debug\Projet_TraitementImage.pdb
+C:\Users\François\source\repos\Projet_TraitementImage\Projet_TraitementImage\obj\Debug\Projet_TraitementImage.csprojAssemblyReference.cache
