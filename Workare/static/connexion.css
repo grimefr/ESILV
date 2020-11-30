@@ -1,0 +1,73 @@
+body{
+  width:100%;
+  background-color:#607991;
+  font-family:'Trebuchet MS';
+}
+
+h1{
+  font-family:sans-serif;
+}
+
+a{
+  font-size: 15px;
+}
+
+p{
+  color: red;
+  font-size: 15px;
+  font-family:sans-serif;
+}
+
+
+.card-header{
+  width: 350px;
+  height: 70px;
+}
+
+.card-body{
+  width: 350px;
+}
+
+
+.main{
+  height:350px;
+  width:700px;
+  margin:7% auto;
+}
+
+.main div{
+  display: inline-block;
+  border: None;
+}
+
+.main .left{
+  width:50%;
+  float:left;
+  height:100%;
+  background-color:#fff;
+  position: relative;
+  text-align: center;
+}
+
+.main .right{
+  width:50%;
+  float:left;
+  height:100%;
+  margin-left:-5px;
+  padding-right:5px;
+  background-size: cover;
+  text-align: center;
+}
+
+.main .right .fit-picture{
+  width: 350px;
+  height: 350px;
+}
+
+.main .right .lien{
+  font-size: 5px;
+}
+
+.main .left .card-body .btn{
+  width: 300px;
+}

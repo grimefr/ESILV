@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+body{
+  width:100%;
+}
+
+.container{
+  height: 500px;
+  width: 500px;
+  margin-left: 30%;
+  margin-top: 3%;
+  background-image: url("illustration4.jpg");
+  background-size: 500px;
+}
+
+h1{
+  font-weight: bolder;
+  font-family: 'Fjalla One';
+  color: blue;
+  margin-left: 25%;
+}
+
+a{
+  font-size: 20px;
+}

@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+body{
+  width:100%;
+  background-color:#607991;
+  font-family: sans-serif;
+}
+
+h2{
+  font-weight: bolder;
+  font-family: 'Fjalla One';
+  font-size: 80px;
+}
+
+
+.container{
+  height: 500px;
+  width: 1000px;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  background-image: url("illustration1.jpg");
+  background-size: 500px;
+}
+
+.card{
+  width: 600px;
+  height: 450px;
+  margin-bottom: 5%;
+  margin-top: 1%;
+}
+
+.card-header{
+  height: 50px;
+}
+
+a{
+  font-size: 20px;
+}
