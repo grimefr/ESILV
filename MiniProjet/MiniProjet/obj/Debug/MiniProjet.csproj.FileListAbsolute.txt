@@ -1,0 +1,7 @@
+C:\Users\François\source\repos\MiniProjet\MiniProjet\bin\Debug\MiniProjet.exe.config
+C:\Users\François\source\repos\MiniProjet\MiniProjet\bin\Debug\MiniProjet.exe
+C:\Users\François\source\repos\MiniProjet\MiniProjet\bin\Debug\MiniProjet.pdb
+C:\Users\François\source\repos\MiniProjet\MiniProjet\obj\Debug\MiniProjet.csprojAssemblyReference.cache
+C:\Users\François\source\repos\MiniProjet\MiniProjet\obj\Debug\MiniProjet.csproj.CoreCompileInputs.cache
+C:\Users\François\source\repos\MiniProjet\MiniProjet\obj\Debug\MiniProjet.exe
+C:\Users\François\source\repos\MiniProjet\MiniProjet\obj\Debug\MiniProjet.pdb
